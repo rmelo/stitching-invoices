@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 import time
 import os
 
-IMAGE_PATH = os.path.join(os.path.abspath(os.pardir), 'resources/invoices/01/low')
+IMAGE_PATH = os.path.join(os.path.abspath(__file__+'/../..'), 'data/invoices/01/low')
 
 def buildName(i):
     return "low-invoice-"+str(i)+".jpeg"
