@@ -4,7 +4,10 @@ from matplotlib import pyplot as plt
 import time
 import os
 
-IMAGE_PATH = os.path.join(os.path.abspath(os.pardir), 'resources/images')
+IMAGE_PATH = os.path.join(os.path.abspath(os.pardir), 'resources/invoices/01/low')
+
+def buildName(i):
+    return "low-invoice-"+str(i)+".jpeg"
 
 def showTime(t):
     return "%8.2f" % t
@@ -28,7 +31,7 @@ def stitch(imgs):
 time1 = time.time()
 
 images_count = 10
-names = [os.path.join(os.path.join(IMAGE_PATH, "invoice-"+str(i)+".jpeg")) for i in range(1, images_count+1)]
+names = [os.path.join(os.path.join(IMAGE_PATH, buildName(i))) for i in range(1, images_count+1)]
 images = [cv2.imread(x) for x in names]
 
 time2 = time.time()
